@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VIBE — Генератор проектов</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">
+            <span class="logo-dot"></span>
+            VIBE
+        </div>
+
+        <nav class="nav">
+            <a href="#projects">Проекты</a>
+            <a href="#categories">Категории</a>
+            <a href="#about">О проекте</a>
+        </nav>
+
+        <button class="header-btn" onclick="generateProject()">
+            + Создать
+        </button>
+    </header>
+
+
+    <!-- HERO -->
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="badge">
+                    ✦ AI PROJECT GENERATOR
+                </div>
+
+                <h1>
+                    Найди идею.<br>
+                    <span>Создай проект.</span>
+                </h1>
+
+                <p>
+                    VIBE помогает быстро находить идеи для сайтов,
+                    приложений и цифровых проектов.
+                </p>
+
+                <div class="hero-buttons">
+                    <button class="primary-btn" onclick="generateProject()">
+                        Сгенерировать идею
+                        <span>→</span>
+                    </button>
+
+                    <a href="#projects" class="secondary-btn">
+                        Смотреть проекты
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="hero-visual">
+
+                <div class="glow"></div>
+
+                <div class="floating-card card-one">
+                    <span>WEB</span>
+                    <strong>Portfolio</strong>
+                    <small>01</small>
+                </div>
+
+                <div class="floating-card card-two">
+                    <span>APP</span>
+                    <strong>Fitness</strong>
+                    <small>02</small>
+                </div>
+
+                <div class="main-card">
+
+                    <div class="card-top">
+                        <span>YOUR NEXT PROJECT</span>
+                        <span class="green">●</span>
+                    </div>
+
+                    <div class="project-icon">
+                        ✦
+                    </div>
+
+                    <h3>StudyFlow</h3>
+
+                    <p>
+                        Умное приложение для планирования
+                        учебы и отслеживания прогресса.
+                    </p>
+
+                    <div class="tags">
+                        <span>UI/UX</span>
+                        <span>Mobile</span>
+                        <span>Education</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- GENERATOR -->
+        <section class="generator" id="generator">
+
+            <div class="section-title">
+                <div>
+                    <span class="mini-label">01 / GENERATOR</span>
+                    <h2>Твоя следующая идея</h2>
+                </div>
+
+                <button class="refresh-btn" onclick="generateProject()">
+                    ↻ Новая идея
+                </button>
+            </div>
+
+            <div class="generator-box">
+
+                <div class="generator-number" id="projectNumber">
+                    01
+                </div>
+
+                <div class="generated-content">
+
+                    <span class="category" id="generatedCategory">
+                        WEB DESIGN
+                    </span>
+
+                    <h3 id="generatedTitle">
+                        StudyFlow
+                    </h3>
+
+                    <p id="generatedDescription">
+                        Создай современное приложение для студентов,
+                        где можно планировать учебу, ставить цели
+                        и отслеживать прогресс.
+                    </p>
+
+                    <div class="generated-tags" id="generatedTags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+
+                </div>
+
+                <button class="generate-big" onclick="generateProject()">
+                    GENERATE
+                    <span>↗</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROJECTS -->
+        <section class="projects" id="projects">
+
+            <div class="section-title">
+
+                <div>
+                    <span class="mini-label">02 / EXPLORE</span>
+                    <h2>Идеи проектов</h2>
+                </div>
+
+                <div class="search">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Поиск проекта..."
+                        oninput="searchProjects()"
+                    >
+                    <span>⌕</span>
+                </div>
+
+            </div>
+
+
+            <div class="project-grid" id="projectGrid">
+
+                <article class="project-card">
+                    <div class="project-image purple">
+                        <span>01</span>
+                        <div>◈</div>
+                    </div>
+
+                    <div class="project-info">
+                        <span>WEB</span>
+                        <h3>Focus Space</h3>
+                        <p>
+                            Онлайн-пространство для концентрации
+                            и продуктивной работы.
+                        </p>
+
+                        <div class="card-bottom">
+                            <span>HTML / CSS / JS</span>
+                            <button onclick="showMessage('Focus Space')">→</button>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="project-card">
+                    <div class="project-image orange">
+                        <span>02</span>
+                        <div>✦</div>
+                    </div>
+
+                    <div class="project-info">
+                        <span>APP</span>
+                        <h3>Foodly</h3>
+                        <p>
+                            Приложение для поиска интересных
+                            мест с едой рядом.
+                        </p>
+
+                        <div class="card-bottom">
+                            <span>UI / UX / MOBILE</span>
+                            <button onclick="showMessage('Foodly')">→</button>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="project-card">
+                    <div class="project-image blue">
+                        <span>03</span>
+                        <div>⌁</div>
+                    </div>
+
+                    <div class="project-info">
+                        <span>AI</span>
+                        <h3>MindBox</h3>
+                        <p>
+                            Персональный помощник для генерации
+                            идей и заметок.
+                        </p>
+
+                        <div class="card-bottom">
+                            <span>AI / PYTHON</span>
+                            <button onclick="showMessage('MindBox')">→</button>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="project-card">
+                    <div class="project-image green">
+                        <span>04</span>
+                        <div>◎</div>
+                    </div>
+
+                    <div class="project-info">
+                        <span>FITNESS</span>
+                        <h3>MoveUp</h3>
+                        <p>
+                            Трекер тренировок с целями,
+                            статистикой и достижениями.
+                        </p>
+
+                        <div class="card-bottom">
+                            <span>APP / FITNESS</span>
+                            <button onclick="showMessage('MoveUp')">→</button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- CATEGORIES -->
+        <section class="categories" id="categories">
+
+            <span class="mini-label">03 / CATEGORIES</span>
+
+            <h2>
+                Выбери свой<br>
+                <span>направление.</span>
+            </h2>
+
+            <div class="category-list">
+
+                <button onclick="filterCategory('WEB')">
+                    <span>01</span>
+                    WEB DESIGN
+                    <b>↗</b>
+                </button>
+
+                <button onclick="filterCategory('APP')">
+                    <span>02</span>
+                    MOBILE APP
+                    <b>↗</b>
+                </button>
+
+                <button onclick="filterCategory('AI')">
+                    <span>03</span>
+                    ARTIFICIAL INTELLIGENCE
+                    <b>↗</b>
+                </button>
+
+                <button onclick="filterCategory('GAME')">
+                    <span>04</span>
+                    GAME DEVELOPMENT
+                    <b>↗</b>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+        <section class="about" id="about">
+
+            <div class="about-number">
+                V
+            </div>
+
+            <div>
+                <span class="mini-label">04 / ABOUT</span>
+
+                <h2>
+                    Не жди вдохновения.
+                    <span>Создавай.</span>
+                </h2>
+
+                <p>
+                    VIBE — небольшой концептуальный сервис,
+                    который помогает студентам и начинающим
+                    разработчикам находить идеи для своих проектов.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="logo">
+            <span class="logo-dot"></span>
+            VIBE
+        </div>
+
+        <p>Made for creative minds © 2026</p>
+
+        <button onclick="scrollToTop()">↑</button>
+
+    </footer>
+
+
+    <!-- MODAL -->
+    <div class="modal" id="modal">
+
+        <div class="modal-content">
+
+            <button class="close" onclick="closeModal()">×</button>
+
+            <div class="modal-icon">✦</div>
+
+            <h2 id="modalTitle">Project</h2>
+
+            <p>
+                Проект выбран! Теперь можно использовать
+                эту идею как основу для своего сайта или приложения.
+            </p>
+
+            <button class="primary-btn" onclick="closeModal()">
+                Отлично
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
